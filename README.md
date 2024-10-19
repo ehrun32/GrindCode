@@ -1,0 +1,2 @@
+# GrindCode
+Leetcode practice
