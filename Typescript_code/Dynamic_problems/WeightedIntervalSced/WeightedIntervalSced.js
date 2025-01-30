@@ -9,6 +9,7 @@ function jobScheduling(startTime, endTime, profit) {
     const pj = new Array(jobs.length)
         .fill(0)
         .map((_, j) => binarySearch(jobs, j));
+    console.log(pj);
     for (let j = 1; j < jobs.length; j++) {
         // Include current job: jobs[j].value + OPT[p[j]]
         const include = jobs[j][2] + (pj[j] !== -1 ? dp[pj[j]] : 0);
@@ -17,6 +18,7 @@ function jobScheduling(startTime, endTime, profit) {
         // Take the maximum of including or excluding the job
         dp[j] = Math.max(include, exclude);
     }
+    console.log(dp);
     return dp[jobs.length - 1];
 }
 function binarySearch(jobs, index) {

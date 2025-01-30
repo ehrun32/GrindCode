@@ -1,5 +1,5 @@
-const subset = [3, 5, 9, 4, 8],
-  target = 16;
+const subset = [1, 2, 5, 7],
+  target = 8;
 
 function subsetSum(subset: number[], target: number): boolean {
   const m = subset.length;
@@ -19,6 +19,7 @@ function subsetSum(subset: number[], target: number): boolean {
       }
     }
   }
+  console.log(dp);
   return dp[m][n];
 }
 

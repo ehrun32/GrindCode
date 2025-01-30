@@ -1,6 +1,6 @@
 const coin = [2], total = 11;
 function coinChange(coin, total) {
-    const dp = new Array(total + 1).fill(total + 1);
+    const dp = new Array(total + 1).fill(Infinity);
     dp[0] = 0; //Base case
     console.log(dp);
     for (let i = 1; i <= total; i++) {
@@ -13,6 +13,6 @@ function coinChange(coin, total) {
         }
     }
     console.log(dp);
-    return dp[total];
+    return dp[total] === Infinity ? -1 : dp[total];
 }
 console.log(coinChange(coin, total));
